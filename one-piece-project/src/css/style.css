@@ -1,0 +1,127 @@
+body { background: var(--bg); 
+    overflow: hidden;
+ }
+
+main::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, #000 15%, rgba(0, 0, 0, 0) 60%) 
+    no-repeat;
+}
+
+main .personagem {
+    display: none;
+    height: 100vh;
+    
+}
+
+main .personagem.selecionado {
+    display: block;
+}
+
+main .personagem .imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.conteudo {
+    position: absolute;
+    top: 0;
+    left: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1;
+}
+
+.conteudo .nome-personagem {
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+    color: #ffffff;
+    font-family: "Rubik";
+    line-height: 24px;
+    gap: 5px;
+}
+
+.conteudo .logo {
+    background-image: url("../imagens/one-piece-logo.png");
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 180px;
+    min-height: 100vh;
+    padding: 1% 2%;
+    bottom: 2px;
+    gap: 3px;
+    /* overflow: auto; */
+    transform: translateX(0%);
+    transition: .5s;
+    list-style: none; /* adicionado */
+    text-decoration: none; /* adicionado */
+    
+}
+
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+    flex-wrap: wrap;
+    
+}
+
+.botoes .botao img {
+
+    display: inline;
+    height: 8vh;
+    object-fit: cover;
+    border-radius: 50%;
+    animation: bounce 1s infinite alternate;
+  -webkit-animation: bounce 1s infinite alternate;
+
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-1px);
+  }
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px #e10b0b;
+
+
+}
+
